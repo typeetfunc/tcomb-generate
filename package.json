@@ -1,0 +1,61 @@
+{
+  "name": "tcomb-generate",
+  "version": "0.1.0",
+  "description": "Integrate tcomb with property-based testing",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc --pretty",
+    "test": "npm run build && jest --verbose",
+    "develop": "jest --watchAll",
+    "release": "npm run release:patch",
+    "release:patch": "xyz --increment patch",
+    "release:minor": "xyz --increment minor",
+    "release:major": "xyz --increment major"
+  },
+  "author": "Andrey Melnikov",
+  "license": "MIT",
+  "dependencies": {
+    "jsverify": "https://github.com/jsverify/jsverify.git",
+    "tcomb": "^3.2.20",
+    "lodash": "^4.17.4",
+    "@types/lodash": "^4.14.66"
+  },
+  "devDependencies": {
+    "@types/jest": "^18.1.1",
+    "jest": "^19.0.2",
+    "ts-jest": "^19.0.0",
+    "typescript": "2.2.1",
+    "xyz": "^2.1.0",
+    "ts-node": "2.1.0"
+  },
+  "keywords:": [
+    "runtime",
+    "type",
+    "validation",
+    "typescript",
+    "spec",
+    "tcomb",
+    "property-based",
+    "jsverify"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typeetfunc/tcomb-generate"
+  },
+  "jest": {
+    "verbose": false,
+    "testRegex": ".*/*.spec.ts$",
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor"
+    },
+    "testEnvironment": "node"
+  },
+  "files": [
+    "/lib"
+  ]
+}
